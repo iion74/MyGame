@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public int lives = 3;
 
     //벽돌갯수
-    public int bricks = 32;
+    public int bricks = 60;
 
     //게임 재시작 시간
     public float resetDelay;
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
         //평균타임을 설정합니다
         Time.timeScale = 1f;
 
-        Application.LoadLevel(Application.loadLevel);
+        Application.LoadLevel(Application.loadedLevel);
     }
 
     //생명력을 잃게되면 발생
