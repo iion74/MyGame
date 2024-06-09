@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class launcher : MonoBehaviour
 {
-    public float launcherSpeed = 1f; // launcher의 이동속도
+    public float launcherSpeed = 0.5f; // launcher의 이동속도
     private Vector3 playerPos = new Vector3(0f, -3.5f, 0f); // launcher의 초기 위치
 
    

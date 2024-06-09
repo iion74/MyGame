@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ballcontroll : MonoBehaviour
 {
-    public float BallInitialVelocity = 300f;
+    // 볼 가속도
+    public float BallInitialVelocity = 1f;
+    // 리지디바디
     private Rigidbody ballRigidBody = null;
+    //볼플레이 선택여부
     private bool isBallInplay = false;
     private void Awake()
     {
