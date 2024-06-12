@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    //남은 생명력
+    //남은 생명
     public int lives = 3;
 
     //벽돌갯수
@@ -43,11 +43,7 @@ public class GameManager : MonoBehaviour
     //게임 시작시 패들과 벽돌을 불러온다
     public void SetUp()
     {
-        if (paddle != null)
-        {
-            clonePaddle = Instantiate(paddle, paddle.transform.position, Quaternion.identity) as GameObject;
-        }
-
+     
         if (bricksPrefab != null)
         {
             Instantiate(bricksPrefab, bricksPrefab.transform.position, Quaternion.identity);
@@ -64,8 +60,8 @@ public class GameManager : MonoBehaviour
             if (success != null)
             {
                 success.SetActive(true);
-                //시간을 2.5배 빠르게
-                Time.timeScale = 2.5f;
+                //시간을 1.5배 빠르게
+                Time.timeScale = 1.5f;
                 Invoke("Reset", resetDelay);
             }
         }
@@ -101,15 +97,6 @@ public class GameManager : MonoBehaviour
         {
             txtLives.text = "남은 생명 : " + lives;
         }
-
-        //파티클 발생
-        if (DeathParticles != null)
-        {
-            Instantiate(DeathParticles, clonePaddle.transform.position, Quaternion.identity);
-        }
-
-        //패들 없애기
-        Destroy(clonePaddle.gameObject);
 
         //딜레이 시간 만큼 지나면 패들 생산
         Invoke("SetupPaddle", resetDelay);
